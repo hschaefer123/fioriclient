@@ -1,0 +1,20 @@
+<mvc:View xcontrollerName="de.blogspot.openui5.fc.controller.InAppBrowser" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false">
+		<l:BlockLayout background="Light">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="4" title="InAppBrowser">
+					<Text text="The InAppBrowser plugin provides Kapsel applications with an in-app web browser view.The InAppBrowser plugin provides Kapsel applications with an in-app web browser view."/>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell titleAlignment="Center">
+					<core:Icon src="sap-icon://internet-browser"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell>
+					<Text text="..."/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>

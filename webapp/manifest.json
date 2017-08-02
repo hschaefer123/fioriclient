@@ -1,0 +1,191 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "de.blogspot.openui5.fc",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "de.blogspot.openui5.fc.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.tnt": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "de.blogspot.openui5.fc.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "de.blogspot.openui5.fc.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "pages",
+				"transition": "show",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "welcome",
+					"target": "welcome",
+					"id": "welcome"
+				},
+				{
+					"pattern": "attachmentviewer",
+					"name": "attachmentviewer",
+					"target": "attachmentviewer"
+				},
+				{
+					"pattern": "barcodescanner",
+					"name": "barcodescanner",
+					"target": "barcodescanner"
+				},
+				{
+					"pattern": "calendar",
+					"name": "calendar",
+					"target": "calendar"
+				},
+				{
+					"pattern": "camera",
+					"name": "camera",
+					"target": "camera"
+				},
+				{
+					"pattern": "contacts",
+					"name": "contacts",
+					"target": "contacts"
+				},
+				{
+					"pattern": "geolocation",
+					"name": "geolocation",
+					"target": "geolocation"
+				},
+				{
+					"pattern": "inappbrowser",
+					"name": "inappbrowser",
+					"target": "inappbrowser"
+				},
+				{
+					"pattern": "printer",
+					"name": "printer",
+					"target": "printer"
+				},
+				{
+					"pattern": "voicerecording",
+					"name": "voicerecording",
+					"target": "voicerecording"
+				}
+			],
+			"targets": {
+				"welcome": {
+					"viewName": "Welcome",
+					"viewId": "welcome",
+					"viewLevel": 1
+				},
+				"attachmentviewer": {
+					"viewName": "AttachmentViewer",
+					"viewId": "attachmentviewer",
+					"viewLevel": 2
+				},
+				"barcodescanner": {
+					"viewName": "BarcodeScanner",
+					"viewId": "barcodescanner",
+					"viewLevel": 2
+				},
+				"calendar": {
+					"viewName": "Calendar",
+					"viewId": "calendar",
+					"viewLevel": 2
+				},
+				"camera": {
+					"viewName": "Camera",
+					"viewId": "camera",
+					"viewLevel": 2
+				},
+				"contacts": {
+					"viewName": "Contacts",
+					"viewId": "contacts",
+					"viewLevel": 2
+				},
+				"geolocation": {
+					"viewName": "Geolocation",
+					"viewId": "geolocation",
+					"viewLevel": 2
+				},
+				"inappbrowser": {
+					"viewName": "InAppBrowser",
+					"viewId": "inappbrowser",
+					"viewLevel": 2
+				},
+				"printer": {
+					"viewName": "Printer",
+					"viewId": "printer",
+					"viewLevel": 2
+				},
+				"voicerecording": {
+					"viewName": "VoiceRecording",
+					"viewId": "voicerecording",
+					"viewLevel": 2
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

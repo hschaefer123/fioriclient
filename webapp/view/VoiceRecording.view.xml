@@ -1,0 +1,42 @@
+<mvc:View controllerName="de.blogspot.openui5.fc.controller.VoiceRecording" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false">
+		<l:BlockLayout background="Light">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="4" title="Voice Recording">
+					<Text text="Use the Voice Recording plugin to record audio information using the native audio recorder application."/>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell titleAlignment="Center">
+					<core:Icon src="sap-icon://microphone"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="Record">
+					<l:VerticalLayout width="100%">
+						<List>
+							<InputListItem label="maxLength">
+								<Slider value="{ path: 'ui>/options/maxLength', type: 'sap.ui.model.type.Integer' }" min="0" max="512000" showAdvancedTooltip="true"/>
+							</InputListItem>
+						</List>
+						<Button class="sapUiSmallMarginTop" icon="sap-icon://record" text="Record" type="Emphasized" enabled="{ui>/isFioriClientAvailable}"
+							press="onRecord"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell title="Recordings" width="2">
+					<l:VerticalLayout width="100%">
+						<List id="list" items="{ui>/Recordings}" mode="Delete" noDataText="no recordings available" delete="onDelete" itemPress="onPlay">
+							<ObjectListItem type="Navigation" title="{ui>id}" number="{ui>duration}" numberUnit="Duration">
+								<firstStatus>
+									<ObjectStatus text="{ path: 'ui>creationDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'short' } }"/>
+								</firstStatus>
+							</ObjectListItem>
+						</List>
+						<ScrollContainer>
+							<core:HTML class="highlight" content="{ui>/recordingMetadata}"/>
+						</ScrollContainer>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>

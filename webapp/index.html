@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-title" content="SAP Fiori Client">
+		<meta name="apple-mobile-web-app-capable" content="yes">  
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+        <meta name="format-detection" content="telephone=no">
+        
+		<title>SAP Fiori Client</title>
+		
+        <script>
+            // CacheBuster Timestamp
+            window["openui5-timestamp"] = (window.location.search.indexOf("hc_orionpath") !== -1) ? new Date().getTime() : "20170802184000";
+            //window["openui5-timestamp"] = new Date().getTime();
+            
+            var standalone = window.navigator.standalone,
+                userAgent = window.navigator.userAgent.toLowerCase(),
+                safari = /safari/.test( userAgent ),
+                ios = /iphone|ipod|ipad/.test( userAgent ),
+                bAddToHomescreen = (ios && !standalone && safari);
+                
+			bAddToHomescreen = false;
+            
+            function loadScript(sUrl) {
+                sUrl += '?ts=' + window["openui5-timestamp"];
+                document.write("<script src=\"" + sUrl + "\"><\/script>");
+            }
+            function loadStyle(sUrl) {
+                sUrl += '?ts=' + window["openui5-timestamp"];
+                document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + sUrl + "\">");
+            }
+            loadScript("util/CacheBuster.js");
+            loadScript("preboot.js");
+        </script>		
+        
+		<script id="sap-ui-bootstrap"
+			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-oninit="main();"
+			data-sap-ui-libs="sap.m,sap.ui.layout,sap.tnt"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-preload="async"
+			data-sap-ui-frameOptions="deny"
+			data-sap-ui-language="en"
+			data-sap-ui-resourceroots='{"de.blogspot.openui5.fc": "./"}'>
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+</html>

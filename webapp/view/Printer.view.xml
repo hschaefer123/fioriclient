@@ -1,0 +1,37 @@
+<mvc:View controllerName="de.blogspot.openui5.fc.controller.Printer" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false">
+		<l:BlockLayout background="Light">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="4" title="Printer">
+					<Text class="sapUiTinyMarginBottom" text="The Printer plugin supports printing documents in three ways:"/>
+					<HBox class="sapUiTinyMarginTopBottom">
+						<core:Icon class="sapUiTinyMarginBeginEnd" src="sap-icon://accept" tooltip="Accept"/>
+						<Text text="Print the current page from within the application"/>
+					</HBox>
+					<HBox class="sapUiTinyMarginTopBottom">
+						<core:Icon class="sapUiTinyMarginBeginEnd" src="sap-icon://accept" tooltip="Accept"/>
+						<Text text="AttachmentViewer plugin – print a document opened with the AttachmentViewer using the InAppBrowser"/>
+					</HBox>
+					<HBox class="sapUiTinyMarginTopBottom">
+						<core:Icon class="sapUiTinyMarginBeginEnd" src="sap-icon://accept" tooltip="Accept"/>
+						<Text
+							text="Background printing – print a document without the AttachmentViewer or the InAppBrowser. The content does not appear in a webview, and no preview is available prior to printing"/>
+					</HBox>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell titleAlignment="Center">
+					<core:Icon src="sap-icon://print"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="Print Data">
+					<l:VerticalLayout>
+						<TextArea value="{ui>/printText}" width="100%" rows="5" cols="40"/>
+						<Button class="sapUiTinyMarginTop" text="Print" icon="sap-icon://print" type="Emphasized" enabled="{ui>/isFioriClientAvailable}"
+							press="onPrint"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>

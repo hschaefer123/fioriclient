@@ -1,0 +1,42 @@
+<mvc:View controllerName="de.blogspot.openui5.fc.controller.Calendar" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false">
+		<l:BlockLayout background="Light">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="4" title="Calendar">
+					<Text text="Enables applications to use the default calendar."/>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell titleAlignment="Center">
+					<core:Icon src="sap-icon://calendar"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="Event">
+					<l:VerticalLayout width="100%">
+						<List>
+							<InputListItem label="Title">
+								<Input value="{ui>/options/title}"/>
+							</InputListItem>
+							<InputListItem label="Location">
+								<Input value="{ui>/options/eventLocation}"/>
+							</InputListItem>
+							<InputListItem label="From">
+								<DateTimePicker
+									value="{path:'ui>/options/startDate', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', strictParsing: true}}"/>
+							</InputListItem>
+							<InputListItem label="To">
+								<DateTimePicker
+									value="{path:'ui>/options/endDate', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', strictParsing: true}}"/>
+							</InputListItem>
+							<InputListItem label="Notes">
+								<Input value="{ui>/options/notes}"/>
+							</InputListItem>
+						</List>
+						<Button class="sapUiTinyMarginTop" icon="sap-icon://add-activity" text="Add Event" type="Emphasized" enabled="{ui>/isFioriClientAvailable}"
+							press="onCalendar"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>

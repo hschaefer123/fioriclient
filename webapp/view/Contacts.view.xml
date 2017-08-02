@@ -1,0 +1,47 @@
+<mvc:View controllerName="de.blogspot.openui5.fc.controller.Contact" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false">
+		<l:BlockLayout background="Light">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="4" title="Contacts">
+					<Text
+						text="This plugin defines a global navigator.contacts object, which provides access to the device contacts database.This plugin defines a global navigator.contacts object, which provides access to the device contacts database."/>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell titleAlignment="Center">
+					<core:Icon src="sap-icon://contacts"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="Add Contact">
+					<l:VerticalLayout width="100%">
+						<List>
+							<InputListItem label="Given Name">
+								<Input value="{ui>/options/givenName}"/>
+							</InputListItem>
+							<InputListItem label="Family Name">
+								<Input value="{ui>/options/familyName}"/>
+							</InputListItem>
+							<InputListItem label="Nickname">
+								<Input value="{ui>/options/nickname}"/>
+							</InputListItem>
+							<InputListItem label="Note">
+								<Input value="{ui>/options/note}"/>
+							</InputListItem>
+						</List>
+						<Button class="sapUiSmallMarginTop" icon="sap-icon://add-contact" text="Add Contact" type="Emphasized"
+							enabled="{ui>/isFioriClientAvailable}" press="onAddContact"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell title="Pick Contact">
+					<l:VerticalLayout>
+						<ScrollContainer>
+							<core:HTML class="highlight" content="{ui>/pickData}"/>
+						</ScrollContainer>
+						<Button class="sapUiSmallMarginTop" icon="sap-icon://employee-lookup" text="Pick Contact" type="Emphasized"
+							enabled="{ui>/isFioriClientAvailable}" press="onPickContact"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>

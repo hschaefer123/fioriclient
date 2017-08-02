@@ -1,0 +1,49 @@
+<mvc:View controllerName="de.blogspot.openui5.fc.controller.App" displayBlock="true"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" xmlns="sap.m">
+	<App>
+		<pages>
+			<tnt:ToolPage id="toolPage">
+				<tnt:header>
+					<tnt:ToolHeader>
+						<Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+						<Image src="./mime/OpenUI5_Developer.png" height="90%" densityAware="false" tooltip="OpenUI5 Developer Logo" visible="{= !${device>/system/phone} }" />
+						<ToolbarSpacer/>
+						<Title text="{i18n>title}" titleStyle="{= ${device>/system/phone} ? 'H4' : 'H2' }">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low" />
+							</layoutData>
+						</Title>
+						<ObjectStatus state="{= ${ui>/isFioriClientAvailable} ? 'Success' : 'Error' }"
+							icon="{= ${ui>/isFioriClientAvailable} ? 'sap-icon://connected' : 'sap-icon://disconnected' }"/>
+						<ToolbarSpacer/>
+						<Button text="{= ${device>/system/phone} ? '' : ${i18n>Print} }" icon="sap-icon://print" type="Transparent" press="onPrint" />
+						<Button text="{= ${device>/system/phone} ? '' : ${i18n>Help} }" icon="sap-icon://sys-help" type="Transparent" press="onHelp" />
+					</tnt:ToolHeader>
+				</tnt:header>
+				<tnt:sideContent>
+					<tnt:SideNavigation expanded="true" itemSelect="onItemSelect">
+						<tnt:NavigationList>
+							<tnt:NavigationListItem text="{i18n>Home}" icon="sap-icon://home" data:route="welcome"/>
+							<tnt:NavigationListItem text="{i18n>Attachment Viewer}" icon="sap-icon://attachment" data:route="attachmentviewer"/>
+							<tnt:NavigationListItem text="{i18n>Barcode Scanner}" icon="sap-icon://bar-code" data:route="barcodescanner"/>
+							<tnt:NavigationListItem text="{i18n>Calendar}" icon="sap-icon://calendar" data:route="calendar"/>
+							<tnt:NavigationListItem text="{i18n>Camera}" icon="sap-icon://camera" data:route="camera"/>
+							<tnt:NavigationListItem text="{i18n>Contacts}" icon="sap-icon://contacts" data:route="contacts"/>
+							<tnt:NavigationListItem text="{i18n>Geolocation}" icon="sap-icon://locate-me" data:route="geolocation"/>
+							<!--<tnt:NavigationListItem text="{i18n>InAppBrowser}" icon="sap-icon://internet-browser" data:route="inappbrowser"/>-->
+							<tnt:NavigationListItem text="{i18n>Printer}" icon="sap-icon://print" data:route="printer"/>
+							<tnt:NavigationListItem text="{i18n>Voice Recording}" icon="sap-icon://microphone" data:route="voicerecording"/>
+						</tnt:NavigationList>
+					</tnt:SideNavigation>
+				</tnt:sideContent>
+				<tnt:mainContents>
+					<NavContainer id="idAppControl"/>
+				</tnt:mainContents>
+			</tnt:ToolPage>
+		</pages>
+	</App>
+</mvc:View>

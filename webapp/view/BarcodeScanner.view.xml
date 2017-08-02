@@ -1,0 +1,27 @@
+<mvc:View controllerName="de.blogspot.openui5.fc.controller.BarcodeScanner" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false">
+		<l:BlockLayout background="Light">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="4" title="Barcode Scanner">
+					<Text text="Enables applications to scan and decode a barcode using the device camera."/>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell titleAlignment="Center">
+					<core:Icon src="sap-icon://bar-code"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<Button icon="sap-icon://bar-code" text="Open Scanner" type="Emphasized" enabled="{ui>/isFioriClientAvailable}"
+							press="onBarCodeScan"/>
+						<List class="sapUiSmallMarginTop" visible="{= ${ui>/scanValue}.length > 0 }">
+							<StandardListItem title="Value" info="{ui>/scanValue}"/>
+							<StandardListItem title="Format" info="{ui>/scanFormat}"/>
+						</List>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>

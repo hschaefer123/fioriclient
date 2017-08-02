@@ -1,0 +1,15 @@
+.photo {
+    border-radius: 0.5rem;
+}
+
+/* json highlight */
+.pre {
+	outline: 1px solid #ccc; 
+	padding: 0.5rem; 
+	margin: 0.5rem; 
+}
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }

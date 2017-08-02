@@ -1,0 +1,69 @@
+<mvc:View controllerName="de.blogspot.openui5.fc.controller.Camera" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false">
+		<l:BlockLayout background="Light">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="4" title="Camera">
+					<Text
+						text="This plugin defines a global navigator.camera object, which provides an API for taking pictures and for choosing images from the system's image library."/>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell titleAlignment="Center">
+					<core:Icon src="sap-icon://camera"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="Options">
+					<l:VerticalLayout width="100%">
+						<List>
+							<InputListItem label="Quality">
+								<Slider value="{ path: 'ui>/options/quality', type: 'sap.ui.model.type.Integer' }" min="0" max="100" showAdvancedTooltip="true"/>
+							</InputListItem>
+							<InputListItem label="Destination Type">
+								<Select forceSelection="true" selectedKey="{ path: 'ui>/options/destinationType', type: 'sap.ui.model.type.Integer' }" items="{ui>/destinationTypes}">
+									<core:Item key="{ui>key}" text="{ui>value}"/>
+								</Select>
+							</InputListItem>
+							<InputListItem label="Source Type">
+								<Select forceSelection="true" selectedKey="{ path: 'ui>/options/sourceType', type: 'sap.ui.model.type.Integer' }" items="{ui>/sourceTypes}">
+									<core:Item key="{ui>key}" text="{ui>value}"/>
+								</Select>
+							</InputListItem>
+							<InputListItem label="Encoding Type">
+								<Select forceSelection="true" selectedKey="{ path: 'ui>/options/encodingType', type: 'sap.ui.model.type.Integer' }" items="{ui>/encodingTypes}">
+									<core:Item key="{ui>key}" text="{ui>value}"/>
+								</Select>
+							</InputListItem>
+							<InputListItem label="Camera Direction">
+								<Select forceSelection="true" selectedKey="{ path: 'ui>/options/cameraDirection', type: 'sap.ui.model.type.Integer' }" items="{ui>/cameraDirections}">
+									<core:Item key="{ui>key}" text="{ui>value}"/>
+								</Select>
+							</InputListItem>
+							<InputListItem label="Allow Edit">
+								<Switch state="{ path: 'ui>/options/allowEdit', type: 'sap.ui.model.type.Boolean' }"/>
+							</InputListItem>
+							<InputListItem label="Correct Orientation">
+								<Switch state="{ path: 'ui>/options/correctOrientation', type: 'sap.ui.model.type.Boolean' }"/>
+							</InputListItem>
+							<InputListItem label="Save to Album">
+								<Switch state="{ path: 'ui>/options/saveToPhotoAlbum', type: 'sap.ui.model.type.Boolean' }"/>
+							</InputListItem>
+						</List>
+						<Button class="sapUiTinyMarginTop" icon="sap-icon://add-photo" text="Take Picture" type="Emphasized" enabled="{ui>/isFioriClientAvailable}"
+							press="onCamera"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<Image id="cameraImage" class="photo" width="100%" height="100%" src="./mime/placeholder.png" densityAware="false">
+						<!--
+						<detailBox>
+							<LightBox>
+								<LightBoxItem id="lightBoxItemImage" imageSrc="./mime/placeholder.png" alt="Preview"/>
+							</LightBox>
+						</detailBox>
+						-->
+					</Image>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>
