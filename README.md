@@ -1,6 +1,6 @@
 # FioriClient
 
-## [OpenUI5 Developer Blog](http://openui5.blogspot.com/2017/08/fioriclient.html)
+## [OpenUI5 Developer Blog](http://openui5.blogspot.com/2017/08/sap-fiori-client-part-ii.html)
 
 > [UI5](http://openui5.org/) demo showing native device features inside [SAP Fiori Client](https://uacp2.hana.ondemand.com/viewer/p/SAP_FIORI_CLIENT).
 
