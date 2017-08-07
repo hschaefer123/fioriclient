@@ -34,7 +34,6 @@
 							<tnt:NavigationListItem text="{i18n>Camera}" icon="sap-icon://camera" data:route="camera"/>
 							<tnt:NavigationListItem text="{i18n>Contacts}" icon="sap-icon://contacts" data:route="contacts"/>
 							<tnt:NavigationListItem text="{i18n>Geolocation}" icon="sap-icon://locate-me" data:route="geolocation"/>
-							<!--<tnt:NavigationListItem text="{i18n>InAppBrowser}" icon="sap-icon://internet-browser" data:route="inappbrowser"/>-->
 							<tnt:NavigationListItem text="{i18n>Printer}" icon="sap-icon://print" data:route="printer"/>
 							<tnt:NavigationListItem text="{i18n>Voice Recording}" icon="sap-icon://microphone" data:route="voicerecording"/>
 						</tnt:NavigationList>

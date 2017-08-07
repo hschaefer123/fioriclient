@@ -1,4 +1,4 @@
-<mvc:View controllerName="de.blogspot.openui5.fc.controller.BaseController"
+<mvc:View controllerName="de.blogspot.openui5.fc.controller.BaseController" xmlns:core="sap.ui.core"
 	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:ui5dev="de.blogspot.openui5.fc.control" xmlns="sap.m">
 	<Page showHeader="false">
@@ -9,7 +9,7 @@
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell title="Native Device Demos" width="3">
+				<l:BlockLayoutCell title="{i18n>Native Device Demos}" width="3">
 					<l:VerticalLayout>
 						<Text
 							text="This app offers some selected native device APIs demos if running inside SAP Fiori Client. Please use the tool items on the left to switch between the demos."/>
@@ -22,10 +22,10 @@
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell title="Supported Devices"></l:BlockLayoutCell>
+				<l:BlockLayoutCell title="{i18n>Supported Devices}"></l:BlockLayoutCell>
 			</l:BlockLayoutRow>
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell title="Apple" titleAlignment="Center">
+				<l:BlockLayoutCell title="{i18n>Apple}" titleAlignment="Center">
 					<l:VerticalLayout>
 						<Label text="Apple App Store for iOS"/>
 						<Button class="sapUiSmallMarginTopBottom" text="View in store" type="Emphasized"
@@ -33,7 +33,7 @@
 						<Label text="iOS 8.x - 9.x"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
-				<l:BlockLayoutCell title="Android" titleAlignment="Center">
+				<l:BlockLayoutCell title="{i18n>Android}" titleAlignment="Center">
 					<l:VerticalLayout>
 						<Label text="Google Play Store for Android"/>
 						<Button class="sapUiSmallMarginTopBottom" text="View in store" type="Emphasized"
@@ -41,7 +41,7 @@
 						<Label text="Android 4.3 - 5.x"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
-				<l:BlockLayoutCell title="Microsoft" titleAlignment="Center">
+				<l:BlockLayoutCell title="{i18n>Microsoft}" titleAlignment="Center">
 					<l:VerticalLayout>
 						<Label text="Microsoft App Store"/>
 						<Button class="sapUiSmallMarginTopBottom" text="View in store" type="Emphasized"
@@ -51,7 +51,70 @@
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
 			<l:BlockLayoutRow>
-				<l:BlockLayoutCell title="App Usage" width="2">
+				<l:BlockLayoutCell title="{i18n>Samples}"></l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow class="titleLink">
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<core:Icon class="sapUiTinyMarginBottom" src="sap-icon://attachment" size="2rem"/>
+						<Link class="sapUiTinyMarginBottom" text="{i18n>Attachment Viewer}" press="onNavTo" data:route="attachmentviewer"/>
+						<Text text="Enhances the viewing of an attachment within a WebView."/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<core:Icon class="sapUiTinyMarginBottom" src="sap-icon://bar-code" size="2rem"/>
+						<Link class="sapUiTinyMarginBottom" text="{i18n>Barcode Scanner}" press="onNavTo" data:route="barcodescanner"/>
+						<Text text="Scan and decode a barcode using the device camera."/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<core:Icon class="sapUiTinyMarginBottom" src="sap-icon://calendar" size="2rem"/>
+						<Link class="sapUiTinyMarginBottom" text="{i18n>Calendar}" press="onNavTo" data:route="calendar"/>
+						<Text text="Use the default calendar and create events."/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<core:Icon class="sapUiTinyMarginBottom" src="sap-icon://camera" size="2rem"/>
+						<Link class="sapUiTinyMarginBottom" text="{i18n>Camera}" press="onNavTo" data:route="camera"/>
+						<Text text="Taking pictures using camera and choose images from the system's image library."/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow class="titleLink">
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<core:Icon class="sapUiTinyMarginBottom" src="sap-icon://contacts" size="2rem"/>
+						<Link class="sapUiTinyMarginBottom" text="{i18n>Contacts}" press="onNavTo" data:route="contacts"/>
+						<Text text="Provides access to device contacts database and allows to create contacts."/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<core:Icon class="sapUiTinyMarginBottom" src="sap-icon://locate-me" size="2rem"/>
+						<Link class="sapUiTinyMarginBottom" text="{i18n>Geolocation}" press="onNavTo" data:route="geolocation"/>
+						<Text text="Access device's location, such as latitude and longitude."/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<core:Icon class="sapUiTinyMarginBottom" src="sap-icon://print" size="2rem"/>
+						<Link class="sapUiTinyMarginBottom" text="{i18n>Print}" press="onNavTo" data:route="printer"/>
+						<Text text="Print the current page, print a document or print in background."/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<l:VerticalLayout>
+						<core:Icon class="sapUiTinyMarginBottom" src="sap-icon://microphone" size="2rem"/>
+						<Link class="sapUiTinyMarginBottom" text="{i18n>Voice Recording}" press="onNavTo" data:route="voicerecording"/>
+						<Text text="Record audio and playback information using the native audio recorder application."/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="{i18n>App Usage}" width="2">
 					<l:VerticalLayout>
 						<Text text="Install the appropiate SAP Fiori Client on your device and enter the FioriURL"/>
 						<HBox width="100%" alignItems="Center" fitContainer="true">

@@ -1,8 +1,9 @@
 /* global Camera */
 sap.ui.define([
+	"jquery.sap.global",
 	"./BaseController",
 	"sap/ui/model/json/JSONModel"
-], function(BaseController, JSONModel) {
+], function(jQuery, BaseController, JSONModel) {
 	"use strict";
 
 	return BaseController.extend("de.blogspot.openui5.fc.controller.Camera", {
