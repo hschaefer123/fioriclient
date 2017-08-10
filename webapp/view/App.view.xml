@@ -10,18 +10,19 @@
 								<OverflowToolbarLayoutData priority="NeverOverflow"/>
 							</layoutData>
 						</Button>
-						<Image src="./mime/OpenUI5_Developer.png" height="90%" densityAware="false" tooltip="OpenUI5 Developer Logo" visible="{= !${device>/system/phone} }" />
+						<Image src="./mime/OpenUI5Developer.svg" height="90%" densityAware="false" tooltip="OpenUI5 Developer Logo"
+							visible="{= !${device>/system/phone} }" press="onNavTo" data:route="welcome"/>
 						<ToolbarSpacer/>
 						<Title text="{i18n>title}" titleStyle="{= ${device>/system/phone} ? 'H4' : 'H2' }">
 							<layoutData>
-								<OverflowToolbarLayoutData priority="Low" />
+								<OverflowToolbarLayoutData priority="Low"/>
 							</layoutData>
 						</Title>
 						<ObjectStatus state="{= ${ui>/isFioriClientAvailable} ? 'Success' : 'Error' }"
 							icon="{= ${ui>/isFioriClientAvailable} ? 'sap-icon://connected' : 'sap-icon://disconnected' }"/>
 						<ToolbarSpacer/>
-						<Button text="{= ${device>/system/phone} ? '' : ${i18n>Print} }" icon="sap-icon://print" type="Transparent" press="onPrint" />
-						<Button text="{= ${device>/system/phone} ? '' : ${i18n>Help} }" icon="sap-icon://sys-help" type="Transparent" press="onHelp" />
+						<Button text="{= ${device>/system/phone} ? '' : ${i18n>Print} }" icon="sap-icon://print" type="Transparent" press="onPrint"/>
+						<Button text="{= ${device>/system/phone} ? '' : ${i18n>Help} }" icon="sap-icon://sys-help" type="Transparent" press="onHelp"/>
 					</tnt:ToolHeader>
 				</tnt:header>
 				<tnt:sideContent>

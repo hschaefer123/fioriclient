@@ -13,7 +13,7 @@
       "test.html"
     ],
     "buildRequired": false,
-    "lastBuildDateTime": "Mon, 07 Aug 2017 08:54:18 GMT"
+    "lastBuildDateTime": "Thu, 10 Aug 2017 11:16:21 GMT"
   },
   "translation": {
     "translationDomain": "",
@@ -37,6 +37,6 @@
   "hcpdeploy": {
     "account": "p1940953245trial",
     "name": "fioriclient",
-    "lastVersionWeTriedToDeploy": "1.0.64"
+    "lastVersionWeTriedToDeploy": "1.0.65"
   }
 }
