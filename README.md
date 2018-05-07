@@ -6,7 +6,7 @@
 
 ### [Online Demo (SAP HCP)](https://fioriclient-p1940953245trial.dispatcher.hanatrial.ondemand.com/index.html)
 
-![Screenshot](FioriClient.gif)
+![Screenshot](./FioriClient.gif)
 
 ### Highlights
 > - demo how to use native device features inside the [SAP Fiori Client](https://uacp2.hana.ondemand.com/viewer/p/SAP_FIORI_CLIENT)
